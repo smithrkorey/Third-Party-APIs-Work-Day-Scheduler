@@ -1,70 +1,72 @@
 $( document ).ready(function() {
-    var current = moment().format('MMMM Do YYYY, h:mm:ss a');
+    var current = moment().format('MMMM Do YYYY');
    $('#currentDay').append(current);
+
+   //saving the input from each block into local storage and saving even after refresh
+   $("#9 input").val(localStorage.getItem("nineInput"))
+   $("#10 input").val(localStorage.getItem("tenInput"))
+   $("#11 input").val(localStorage.getItem("elevenInput"))
+   $("#12 input").val(localStorage.getItem("twelveInput"))
+   $("#1 input").val(localStorage.getItem("oneInput"))
+   $("#2 input").val(localStorage.getItem("twoInput"))
+   $("#3 input").val(localStorage.getItem("threeInput"))
+   $("#4 input").val(localStorage.getItem("fourInput"))
+   $("#5 input").val(localStorage.getItem("fiveInput"))
    
-   
-
-   //OLD CODE - LEFT FOR REFERNCE
-   
-   /*
-   //Creating array to display time blocks
-   var timeBlock = [];
-
-   //For loop to generate list of hours
-                        //24 hours in a day
-   for (let i = 0; i < 8; i++) {
-                //Pulling from moment.js to add hour increments
-    timeBlock.push(moment().add(i,'hour').calendar());     
-   }
-   console.log(timeBlock)
-   */
-
-
 
    //using jQuery to select the button from id nine and creating an event handler that runs the function on "click"
-    $("#nine button").on("click", function() {
-        var nineText = $("#nine input").val();
-        window.alert(nineText);               //need to create a way to write input within div
+    $("#9 saveBtn").on("click", function() {
+        var nineText = $("#9 input").val();
+        console.log(nineText); 
+        localStorage.setItem("nineInput", nineText);
     });
 
-    $("#ten button").on("click", function() {
-        var tenText = $("#ten input").val();
+    $("#10 button").on("click", function() {
+        var tenText = $("#10 input").val();
         console.log(tenText);
+        localStorage.setItem("tenInput", tenText);
     });
 
-    $("#eleven button").on("click", function() {
-        var elevenText = $("#eleven input").val();
+    $("#11 button").on("click", function() {
+        var elevenText = $("#11 input").val();
         console.log(elevenText);
+        localStorage.setItem("elevenInput", elevenText);
     });
 
-    $("#twelve button").on("click", function() {
-        var twelveText = $("#twelve input").val();
+    $("#12 button").on("click", function() {
+        var twelveText = $("#12 input").val();
         console.log(twelveText);
+        localStorage.setItem("twelveInput", twelveText);
     });
 
-    $("#one button").on("click", function() {
-        var oneText = $("#one input").val();
+    $("#1 button").on("click", function() {
+        var oneText = $("#1 input").val();
         console.log(oneText);
+        localStorage.setItem("oneInput", oneText);
     });
 
-    $("#two button").on("click", function() {
-        var twoText = $("#two input").val();
+    $("#2 button").on("click", function() {
+        var twoText = $("#2 input").val();
         console.log(twoText);
+        localStorage.setItem("twoInput", twoText);
     });
 
-    $("#three button").on("click", function() {
-        var threeText = $("#three input").val();
+    $("#3 button").on("click", function() {
+        var threeText = $("#3 input").val();
         console.log(threeText);
+        localStorage.setItem("threeInput", threeText);
     });
 
-    $("#four button").on("click", function() {
-        var fourText = $("#four input").val();
+    $("#4 button").on("click", function() {
+        var fourText = $("#4 input").val();
         console.log(fourText);
+        localStorage.setItem("fourInput", fourText);
     });
 
-    $("#five button").on("click", function() {
-        var fiveText = $("#five input").val();
+    $("#5 button").on("click", function() {
+        var fiveText = $("#5 input").val();
         console.log(fiveText);
+        localStorage.setItem("fiveInput", fiveText);
     });
 
     
@@ -72,17 +74,4 @@ $( document ).ready(function() {
 
 
 
-/* GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with time blocks for standard business hours
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-WHEN I click into a time block
-THEN I can enter an event
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```*/
+//THEN each time block is color-coded to indicate whether it is in the past, present, or future
