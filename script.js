@@ -15,7 +15,7 @@ $( document ).ready(function() {
    
 
    //using jQuery to select the button from id nine and creating an event handler that runs the function on "click"
-    $("#9 saveBtn").on("click", function() {
+    $("#9 button").on("click", function() {
         var nineText = $("#9 input").val();
         console.log(nineText); 
         localStorage.setItem("nineInput", nineText);
