@@ -3,19 +3,33 @@ $( document ).ready(function() {
    $('#currentDay').append(current);
 
 
-  var time = moment().hour(); //gets current hour
+  var currentHour = moment().hour(); //gets current hour
+  console.log(currentHour);
+
+  /*var day = [9, 10, 11, 12, 13, 14, 15, 16, 17];
   
+  for (let index = 0; index < day.length; index++) {
+      if (currentHour == day[index]) {
+        $(‘#${index} input’).addClass( 'present' );
+      };
+  } else {
+    (currentHour < day[index]) {
+        $(‘#${index} input’).addClass( 'past' );
+  } else {
+    (currentHour > day[index]) {
+        $(‘#${index} input’).addClass( 'future' );
+    };*/
 
    //saving the input from each block into local storage and saving even after refresh
    $("#9 input").val(localStorage.getItem("nineInput"))
    $("#10 input").val(localStorage.getItem("tenInput"))
    $("#11 input").val(localStorage.getItem("elevenInput"))
    $("#12 input").val(localStorage.getItem("twelveInput"))
-   $("#1 input").val(localStorage.getItem("oneInput"))
-   $("#2 input").val(localStorage.getItem("twoInput"))
-   $("#3 input").val(localStorage.getItem("threeInput"))
-   $("#4 input").val(localStorage.getItem("fourInput"))
-   $("#5 input").val(localStorage.getItem("fiveInput"))
+   $("#13 input").val(localStorage.getItem("thirteenInput"))
+   $("#14 input").val(localStorage.getItem("fourteenInput"))
+   $("#15 input").val(localStorage.getItem("fifteenInput"))
+   $("#16 input").val(localStorage.getItem("sixteenInput"))
+   $("#17 input").val(localStorage.getItem("seventeenInput"))
    
 
    //using jQuery to select the button from id nine and creating an event handler that runs the function on "click"
@@ -43,39 +57,35 @@ $( document ).ready(function() {
         localStorage.setItem("twelveInput", twelveText);
     });
 
-    $("#1 button").on("click", function() {
-        var oneText = $("#1 input").val();
-        console.log(oneText);
-        localStorage.setItem("oneInput", oneText);
+    $("#13 button").on("click", function() {
+        var thirteenText = $("#13 input").val();
+        console.log(thirteenText);
+        localStorage.setItem("thirteenInput", thirteenText);
     });
 
-    $("#2 button").on("click", function() {
-        var twoText = $("#2 input").val();
-        console.log(twoText);
-        localStorage.setItem("twoInput", twoText);
+    $("#14 button").on("click", function() {
+        var fourteenText = $("#14 input").val();
+        console.log(fourteenText);
+        localStorage.setItem("fourteenInput", fourteenText);
     });
 
-    $("#3 button").on("click", function() {
-        var threeText = $("#3 input").val();
-        console.log(threeText);
-        localStorage.setItem("threeInput", threeText);
+    $("#15 button").on("click", function() {
+        var fifteenText = $("#15 input").val();
+        console.log(fifteenText);
+        localStorage.setItem("fifteenInput", fifteenText);
     });
 
-    $("#4 button").on("click", function() {
-        var fourText = $("#4 input").val();
-        console.log(fourText);
-        localStorage.setItem("fourInput", fourText);
+    $("#16 button").on("click", function() {
+        var sixteenText = $("#16 input").val();
+        console.log(sixteenText);
+        localStorage.setItem("sixteenInput", sixteenText);
     });
 
-    $("#5 button").on("click", function() {
-        var fiveText = $("#5 input").val();
-        console.log(fiveText);
-        localStorage.setItem("fiveInput", fiveText);
+    $("#17 button").on("click", function() {
+        var seventeenText = $("#17 input").val();
+        console.log(seventtenText);
+        localStorage.setItem("seventeenInput", seventeenText);
     });
 
     
 });
-
-
-
-//THEN each time block is color-coded to indicate whether it is in the past, present, or future
