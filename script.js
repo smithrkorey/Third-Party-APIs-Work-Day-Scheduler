@@ -2,6 +2,10 @@ $( document ).ready(function() {
     var current = moment().format('MMMM Do YYYY');
    $('#currentDay').append(current);
 
+
+  var time = moment().hour(); //gets current hour
+  
+
    //saving the input from each block into local storage and saving even after refresh
    $("#9 input").val(localStorage.getItem("nineInput"))
    $("#10 input").val(localStorage.getItem("tenInput"))
